@@ -1,0 +1,29 @@
+[package]
+name = "k22f"
+version = "0.1.0"
+authors = ["Tayler Mulligan <mulligantayler@gmail.com>"]
+license = "MIT"
+description = "Device support crate for NXP FRDM-K22F"
+readme = "README.md"
+keywords = ["nxp", "frdm", "k22f", "k22", "svd2rust", "no_std", "embedded"]
+categories = ["embedded", "no-std"]
+repository = "https://github.com/mtayler/k22f-rs"
+
+edition = "2018"
+
+[package.metadata.docs.rs]
+features = ["rt"]
+
+# See more keys and their definitions at
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bare-metal = "^0.2.0"
+cortex-m = "^0.6.0"
+cortex-m-rt = { version = "^0.6.0", optional = true }
+vcell = "^0.1.0"
+
+[features]
+default = []
+rt = ["cortex-m-rt/device"]
+
